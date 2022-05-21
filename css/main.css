@@ -172,4 +172,63 @@ body {
 .box__footer {
   color: #fff;
 }
+
+.animation {
+  -webkit-animation: shadow 2s;
+          animation: shadow 2s;
+}
+
+@-webkit-keyframes shadow {
+  0% {
+    -webkit-box-shadow: 0 0 9px red;
+            box-shadow: 0 0 9px red;
+  }
+  20% {
+    -webkit-box-shadow: 0 0 21px orange;
+            box-shadow: 0 0 21px orange;
+  }
+  40% {
+    -webkit-box-shadow: 0 0 9px red;
+            box-shadow: 0 0 9px red;
+  }
+  60% {
+    -webkit-box-shadow: 0 0 21px orange;
+            box-shadow: 0 0 21px orange;
+  }
+  80% {
+    -webkit-box-shadow: 0 0 9px red;
+            box-shadow: 0 0 9px red;
+  }
+  100% {
+    -webkit-box-shadow: 0 0 9px red;
+            box-shadow: 0 0 9px red;
+  }
+}
+
+@keyframes shadow {
+  0% {
+    -webkit-box-shadow: 0 0 9px red;
+            box-shadow: 0 0 9px red;
+  }
+  20% {
+    -webkit-box-shadow: 0 0 21px orange;
+            box-shadow: 0 0 21px orange;
+  }
+  40% {
+    -webkit-box-shadow: 0 0 9px red;
+            box-shadow: 0 0 9px red;
+  }
+  60% {
+    -webkit-box-shadow: 0 0 21px orange;
+            box-shadow: 0 0 21px orange;
+  }
+  80% {
+    -webkit-box-shadow: 0 0 9px red;
+            box-shadow: 0 0 9px red;
+  }
+  100% {
+    -webkit-box-shadow: 0 0 9px red;
+            box-shadow: 0 0 9px red;
+  }
+}
 /*# sourceMappingURL=main.css.map */

@@ -127,3 +127,30 @@ body {
         color: #fff;
     }
 }
+
+.animation{
+	animation: shadow 2s;
+}
+
+
+
+@keyframes shadow {
+	0%{
+		box-shadow: 0 0 9px red;
+	}
+	20%{
+		box-shadow: 0 0 21px orange
+	}
+	40%{
+		box-shadow: 0 0 9px red;
+	}
+	60%{
+		box-shadow: 0 0 21px orange;
+	}
+	80%{
+		box-shadow: 0 0 9px red;
+	}
+	100%{
+		box-shadow: 0 0 9px red;
+	}
+}

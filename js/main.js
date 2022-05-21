@@ -7,7 +7,7 @@ const btnTranslate = document.querySelector('.box__language');
 const box = document.querySelector('.box');
 const title = box.querySelector('.box__info__title');
 const description = box.querySelector('.box__info__description');
-const year=document.querySelector('.year')
+const year = document.querySelector('.year');
 
 const partsArrEn = [
 	'New tires',
@@ -35,75 +35,51 @@ const partsArrPl = [
 	'Powłoki ceramicznej',
 ];
 
-let currentArray = partsArrEn
+let currentArray = partsArrEn;
 
-const checkInputEn = () => {
-	answer.textContent = '';
-	if (inputBrand.value === '' && inputModel.value === '') {
-		error.textContent = 'Complete model and brand!';
-	} else if (inputBrand.value === '') {
-		error.textContent = 'Complete brand!';
-	} else if (inputModel.value === '') {
-		error.textContent = 'Complete model!';
-	} else {
-		randomAnswer(currentArray);
-		error.textContent = '';
-	}
+const pulse = () => {
+	box.classList.add('animation');
 };
-const checkInputPl = () => {
-	answer.textContent = '';
-	if (inputBrand.value === '' && inputModel.value === '') {
-		error.textContent = 'Podaj markę i model!';
-	} else if (inputBrand.value === '') {
-		error.textContent = 'Uzupełnij markę!';
-	} else if (inputModel.value === '') {
-		error.textContent = 'Uzupelnij model!';
-	} else {
-		randomAnswer(currentArray);
-		error.textContent = '';
-	}
-};
-
 
 const currentInput = () => {
-    if (box.classList.contains('english')) {
-
-        if (inputBrand.value === '' && inputModel.value === '') {
-            error.textContent = 'Podaj markę i model!';
-        } else if (inputBrand.value === '') {
-            error.textContent = 'Uzupełnij markę!';
-        } else if (inputModel.value === '') {
-            error.textContent = 'Uzupelnij model!';
-        } else {
-            randomAnswer(currentArray);
-            error.textContent = '';
-        }
-    }else{
-        
-        if (inputBrand.value === '' && inputModel.value === '') {
-            error.textContent = 'Complete model and brand!';
-        } else if (inputBrand.value === '') {
-            error.textContent = 'Complete brand!';
-        } else if (inputModel.value === '') {
-            error.textContent = 'Complete model!';
-        } else {
-            randomAnswer(currentArray);
-            error.textContent = '';
-        }
-    }
-}
-
+	if (box.classList.contains('english')) {
+		if (inputBrand.value === '' && inputModel.value === '') {
+			error.textContent = 'Podaj markę i model!';
+		} else if (inputBrand.value === '') {
+			error.textContent = 'Uzupełnij markę!';
+		} else if (inputModel.value === '') {
+			error.textContent = 'Uzupelnij model!';
+		} else {
+			pulse();
+			setTimeout('randomAnswer(currentArray)', 2000);
+			error.textContent = '';
+		}
+	} else {
+		if (inputBrand.value === '' && inputModel.value === '') {
+			error.textContent = 'Complete model and brand!';
+		} else if (inputBrand.value === '') {
+			error.textContent = 'Complete brand!';
+		} else if (inputModel.value === '') {
+			error.textContent = 'Complete model!';
+		} else {
+			pulse();
+			setTimeout('randomAnswer(currentArray)', 2000);
+			error.textContent = '';
+		}
+	}
+};
 
 const randomAnswer = (array) => {
 	const randomIndex = Math.floor(Math.random() * array.length);
 	answer.textContent = array[randomIndex];
+	box.classList.remove('animation');
 };
 
 const translate = () => {
 	box.classList.toggle('english');
 
 	if (box.classList.contains('english')) {
-		btnTranslate.innerHTML = 'english';
+		btnTranslate.innerHTML = 'translate to english';
 		btnSearch.innerHTML =
 			'Wyszukaj części <i class="fa-solid fa-screwdriver-wrench"></i>';
 		title.textContent = 'Czego potrzebuje Twój samochód?';
@@ -113,7 +89,7 @@ const translate = () => {
 		inputModel.placeholder = 'Model:';
 		currentArray = partsArrPl;
 	} else {
-		btnTranslate.innerHTML = 'polish';
+		btnTranslate.innerHTML = 'translate to polish';
 		btnSearch.innerHTML =
 			'Search for parts <i class="fa-solid fa-screwdriver-wrench"></i>';
 		title.textContent = 'What need your car?';
@@ -131,5 +107,4 @@ eng.addEventListener('click', translate);
 
 btnSearch.addEventListener('click', currentInput);
 
-year.textContent=new Date().getFullYear()
-
+year.textContent = new Date().getFullYear();

@@ -99,6 +99,7 @@ body {
 .box__info__description {
   padding-top: 40px;
   font-size: 18px;
+  text-align: center;
 }
 
 .box .question-area {
@@ -297,8 +298,8 @@ body {
 
 @media (min-width: 768px) {
   .box {
-    width: 766px;
-    height: 700px;
+    width: 800px;
+    height: 830px;
   }
   .box__language {
     font-size: 1.7rem;

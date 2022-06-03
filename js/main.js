@@ -73,6 +73,9 @@ const randomAnswer = (array) => {
 	const randomIndex = Math.floor(Math.random() * array.length);
 	answer.textContent = array[randomIndex];
 	box.classList.remove('animation');
+	// inputModel.value=''
+	// inputBrand.value=''
+
 };
 
 const translate = () => {
